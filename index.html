@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idriss Nassi | Renewable Energy & Physics</title>
+  <meta name="description" content="Professional portfolio website for Idriss Nassi, passionate about renewable energy, physics, electricity, and innovation." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --card: rgba(11, 29, 51, 0.78);
+      --line: rgba(148, 163, 184, 0.16);
+      --text: #e5eefb;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-2: #22c55e;
+      --accent: #f59e0b;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.14), transparent 24%),
+        linear-gradient(160deg, #040b16 0%, #07111f 45%, #0a1729 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at center, black 40%, transparent 88%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 12, 24, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 1.15rem;
+      box-shadow: 0 10px 24px rgba(34, 197, 94, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.97rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-btn,
+    .hero-buttons a,
+    .project-link,
+    .submit-btn {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .nav-btn {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .nav-btn:hover,
+    .hero-buttons a:hover,
+    .project-link:hover,
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(0,0,0,0.2);
+    }
+
+    .hero {
+      padding: 88px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.11);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      color: #c8ecff;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -1.6px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--primary), #7dd3fc, var(--primary-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 13px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #0ea5e9);
+      color: #03101d;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .stat-card,
+    .panel,
+    .service-card,
+    .project-card,
+    .timeline-item,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 18px;
+    }
+
+    .stat-card h3 {
+      font-size: 1.7rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin: 0;
+    }
+
+    .hero-panel {
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.28), transparent 70%);
+      top: -40px;
+      right: -50px;
+      pointer-events: none;
+    }
+
+    .profile-circle {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .panel-title {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .panel-text {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #dff5ff;
+    }
+
+    section {
+      padding: 34px 0 22px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.45rem);
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .about-grid,
+    .services-grid,
+    .projects-grid,
+    .contact-grid,
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .highlight-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.11);
+      border: 1px solid rgba(34, 197, 94, 0.15);
+      color: #d9ffea;
+      font-size: 0.92rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card,
+    .project-card,
+    .timeline-item,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .service-card h3,
+    .project-card h3,
+    .contact-card h3 {
+      margin: 14px 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(34, 197, 94, 0.18));
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .service-card p,
+    .project-card p,
+    .timeline-item p,
+    .contact-card p,
+    .panel p,
+    .mini-card p {
+      color: var(--muted);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+
+    .project-badge {
+      font-size: 0.82rem;
+      color: #dff5ff;
+      background: rgba(56, 189, 248, 0.11);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .project-link {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #bceeff;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-year {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.12);
+      color: #ffe1a7;
+      border: 1px solid rgba(245, 158, 11, 0.18);
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(255,255,255,0.045);
+      color: var(--text);
+      outline: none;
+      font-size: 0.96rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      border: none;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary-2), #10b981);
+      color: #04140c;
+    }
+
+    .form-message {
+      min-height: 24px;
+      color: #c8facc;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 36px 0 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+      background: rgba(3, 8, 16, 0.42);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+    }
+
+    .footer-note,
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .footer-grid,
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        padding: 14px 0;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .row-2,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="logo">IN</div>
+        <div>
+          <div>Idriss Nassi</div>
+          <small style="color: var(--muted); font-weight: 500;">Renewable Energy • Physics • Electricity</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-btn">Let’s Connect</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="badge">⚡ Future-Focused Scientific Mind</div>
+          <h1>Idriss Nassi, passionate about <span>renewable energy</span>, physics, and advanced electrical systems.</h1>
+          <p>
+            Welcome to a professional digital profile presenting the vision, interests, and scientific ambitions of Idriss Nassi.
+            This website highlights a strong commitment to clean energy, technical learning, innovation, and building a smarter,
+            more sustainable future through science and engineering.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary">Explore Projects</a>
+            <a href="#about" class="btn-secondary">Discover Profile</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card">
+              <h3>3+</h3>
+              <p>Main scientific fields of interest</p>
+            </div>
+            <div class="stat-card">
+              <h3>100%</h3>
+              <p>Motivation for continuous learning</p>
+            </div>
+            <div class="stat-card">
+              <h3>∞</h3>
+              <p>Curiosity for innovation and progress</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel hero-panel reveal visible">
+          <div class="profile-circle">IN</div>
+          <h2 class="panel-title">Professional Summary</h2>
+          <p class="panel-text">
+            Idriss Nassi is an ambitious learner with a serious interest in energy transition, electrical technologies,
+            applied physics, and sustainable engineering solutions.
+          </p>
+
+          <div class="mini-grid">
+            <div class="mini-card">
+              <strong>Main Focus</strong>
+              <p>Renewable energies and efficient power systems</p>
+            </div>
+            <div class="mini-card">
+              <strong>Scientific Interest</strong>
+              <p>Physics concepts, energy conversion, and electrical principles</p>
+            </div>
+            <div class="mini-card">
+              <strong>Long-Term Vision</strong>
+              <p>Contributing to clean technology and high-impact engineering projects</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>About Idriss</h2>
+            <p>A profile built on scientific curiosity, technical ambition, and a clear interest in the future of energy.</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel reveal">
+            <h3 style="margin-bottom: 12px; font-size: 1.35rem;">A disciplined and future-oriented profile</h3>
+            <p>
+              Idriss Nassi is presented here as a motivated person who values knowledge, precision, and progress. His interests
+              are strongly connected to renewable energies, the laws of physics, and the practical world of electricity. He is
+              drawn to systems that create, transform, distribute, and optimize energy in smarter and cleaner ways.
+            </p>
+
+            <div class="highlight-list">
+              <div class="highlight-item">
+                <div class="highlight-icon">01</div>
+                <div>
+                  <strong>Scientific Thinking</strong>
+                  <p>Enjoys understanding how physical laws explain real systems and technologies.</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">02</div>
+                <div>
+                  <strong>Energy Vision</strong>
+                  <p>Interested in solar, wind, efficiency, and sustainable electrical infrastructure.</p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">03</div>
+                <div>
+                  <strong>Professional Ambition</strong>
+                  <p>Wants to grow into a serious profile capable of contributing to engineering and innovation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h3 style="margin-bottom: 12px; font-size: 1.35rem;">Core Interests</h3>
+            <p>
+              The following areas represent the professional and academic direction highlighted on this website.
+            </p>
+            <div class="skill-tags">
+              <span>Renewable Energy</span>
+              <span>Physics</span>
+              <span>Electricity</span>
+              <span>Energy Systems</span>
+              <span>Power Efficiency</span>
+              <span>Scientific Research</span>
+              <span>Technology Innovation</span>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>Areas of Expertise & Interest</h2>
+            <p>Professional thematic sections designed to reflect a strong identity in energy, science, and modern technology.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">☀️</div>
+            <h3>Renewable Energy</h3>
+            <p>
+              Strong interest in sustainable energy sources, especially solar and clean technologies capable of supporting future development.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🧲</div>
+            <h3>Applied Physics</h3>
+            <p>
+              Appreciation for the physical principles behind matter, motion, energy, fields, and the behavior of real-world systems.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">⚡</div>
+            <h3>Electricity & Power</h3>
+            <p>
+              Interest in electrical circuits, power transfer, energy conversion, and the technologies that make modern systems work.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>Featured Professional Concepts</h2>
+            <p>Sample project blocks that make the website feel more complete, modern, and credible.</p>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Energy Concept</span>
+              <span style="color: var(--muted);">01</span>
+            </div>
+            <h3>Solar Efficiency Study</h3>
+            <p>
+              A conceptual project focused on improving solar energy output through better orientation, environmental analysis, and energy optimization.
+            </p>
+            <a href="#contact" class="project-link">Read more →</a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Physics Concept</span>
+              <span style="color: var(--muted);">02</span>
+            </div>
+            <h3>Energy Transfer Modeling</h3>
+            <p>
+              A scientific concept exploring how energy is transformed and transferred in real systems, from physical theory to technical application.
+            </p>
+            <a href="#contact" class="project-link">Read more →</a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-badge">Electrical Concept</span>
+              <span style="color: var(--muted);">03</span>
+            </div>
+            <h3>Smart Electricity Vision</h3>
+            <p>
+              A future-oriented concept about intelligent electrical networks, efficiency monitoring, and responsible power management.
+            </p>
+            <a href="#contact" class="project-link">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>Vision & Journey</h2>
+            <p>A professional timeline-style section that adds credibility and tells a clear story of growth.</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <span class="timeline-year">Foundation</span>
+            <h3>Building a strong scientific base</h3>
+            <p>
+              Developing an understanding of mathematics, physical science, and technical reasoning as the basis for future specialization.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">Exploration</span>
+            <h3>Focusing on energy and electricity</h3>
+            <p>
+              Deepening interest in the fields that shape tomorrow’s infrastructure: renewable energy, power systems, and applied physics.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-year">Ambition</span>
+            <h3>Aiming for impactful engineering contribution</h3>
+            <p>
+              Growing toward a professional future centered on innovation, sustainable development, and technical excellence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2>Contact & Collaboration</h2>
+            <p>A clean professional contact section to make the website look complete and ready for presentation.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Get in Touch</h3>
+            <p>
+              This website can represent Idriss Nassi as a serious, motivated, and future-ready profile open to academic growth,
+              professional opportunities, and technical collaboration.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="highlight-icon">@</div>
+                <div>
+                  <strong>Email</strong>
+                  <p>idriss.nassi@email.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="highlight-icon">⌂</div>
+                <div>
+                  <strong>Location</strong>
+                  <p>Morocco</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="highlight-icon">⚙</div>
+                <div>
+                  <strong>Focus</strong>
+                  <p>Renewable energy, physics, and electricity</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card reveal">
+            <h3>Send a Message</h3>
+            <form id="contactForm">
+              <div class="row-2">
+                <input type="text" id="name" placeholder="Your name" required />
+                <input type="email" id="email" placeholder="Your email" required />
+              </div>
+              <input type="text" id="subject" placeholder="Subject" required />
+              <textarea id="message" placeholder="Write your message here..." required></textarea>
+              <button type="submit" class="submit-btn">Send Message</button>
+              <p class="form-message" id="formMessage"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-bottom: 8px;">Idriss Nassi</h3>
+        <p class="footer-note">Professional portfolio concept focused on renewable energies, physics, and electricity.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.88;
+
+      revealElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          element.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+
+    const setActiveLink = () => {
+      let currentId = 'home';
+
+      sections.forEach((section) => {
+        const top = window.scrollY;
+        const offset = section.offsetTop - 120;
+        const height = section.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+          currentId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+      });
+    };
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        formMessage.textContent = 'Please fill in all fields before sending.';
+        return;
+      }
+
+      formMessage.textContent = `Thank you, ${name}. Your message has been prepared successfully.`;
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
